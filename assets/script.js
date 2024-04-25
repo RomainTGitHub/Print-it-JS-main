@@ -1,21 +1,21 @@
 const slides = [
 	{
-		"image": "assets/images/slideshow/slide1.jpg",
+		"image": "slide1.jpg",
 		"tagLine": "Impressions tous formats <span>en boutique et en ligne</span>"
 	},
 	{
-		"image": "assets/images/slideshow/slide2.jpg",
+		"image": "slide2.jpg",
 		"tagLine": "Tirages haute définition grand format <span>pour vos bureaux et events</span>"
 	},
 	{
-		"image": "assets/images/slideshow/slide3.jpg",
+		"image": "slide3.jpg",
 		"tagLine": "Grand choix de couleurs <span>de CMJN aux pantones</span>"
 	},
 	{
-		"image": "assets/images/slideshow/slide4.png",
+		"image": "slide4.png",
 		"tagLine": "Autocollants <span>avec découpe laser sur mesure</span>"
 	}
-]
+];
 
 // Récupération des éléments du carrousel
 const carouselContainer = document.querySelector('.carousel-inner');
@@ -31,7 +31,7 @@ function showSlides() {
 	// Création du contenu HTML pour chaque diapositive
 	const slidesHTML = slides.map((slide, index) => `
         <div class="carousel-item ${index === currentSlideIndex ? 'active' : ''}">
-            <img src="${slide.image}" class="d-block w-100" alt="Slide">
+            <img src="assets/images/slideshow/${slide.image}" class="d-block w-100" alt="Slide">
             <div class="carousel-caption">
                 <p>${slide.tagLine}</p>
             </div>
@@ -84,36 +84,36 @@ function autoSlide() {
 		if (autoScrolling) {
 			nextSlide();
 		}
-	}, 5000); // Défilement toutes les 3 secondes
+	}, 5000); // Défilement toutes les 5 secondes
 }
 
 // Fonction pour passer à la diapositive suivante
 function nextSlide() {
 	currentSlideIndex = (currentSlideIndex + 1) % slides.length;
 	showSlides();
-	if (!autoScrolling) {
-		console.log('Flèche suivante cliquée');
-	}
 }
 
 // Fonction pour passer à la diapositive précédente
 function prevSlide() {
 	currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
 	showSlides();
-	if (!autoScrolling) {
-		console.log('Flèche précédente cliquée');
-	}
 }
 
 // Écouteurs d'événements pour les clics sur les flèches de navigation
-prevButton.addEventListener('click', () => {
-	autoScrolling = false;
-	prevSlide();
+prevButton.addEventListener('click', (event) => {
+	if (event.button === 0) { // Vérification si le clic est fait avec le bouton gauche de la souris
+		autoScrolling = false;
+		prevSlide();
+		console.log('Flèche précédente cliquée');
+	}
 });
 
-nextButton.addEventListener('click', () => {
-	autoScrolling = false;
-	nextSlide();
+nextButton.addEventListener('click', (event) => {
+	if (event.button === 0) { // Vérification si le clic est fait avec le bouton gauche de la souris
+		autoScrolling = false;
+		nextSlide();
+		console.log('Flèche suivante cliquée');
+	}
 });
 
 // Écouteur d'événement pour les clics sur les indicateurs de navigation
