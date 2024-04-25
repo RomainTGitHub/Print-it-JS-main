@@ -205,6 +205,10 @@ header {
 	width: 100%;
 	min-height: 470px;
 	position: relative;
+	margin: 20px auto;
+	/* Centrage horizontal */
+	max-width: 1440px;
+	/* Largeur maximale de 1440px */
 }
 
 .banner-img {
@@ -219,77 +223,115 @@ header {
 /* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
 
 #banner {
-	margin-top: 40px;
+	position: relative;
+	overflow: hidden;
 }
 
 .carousel-inner {
+	position: relative;
 	width: 100%;
-	height: 100%;
-	object-position: center;
-	max-height: 470px;
-	max-width: 1440px;
+	overflow: hidden;
 }
 
+.carousel-item {
+	position: relative;
+	display: none;
+	width: 100%;
+}
+
+.carousel-item.active {
+	display: block;
+}
+
+/* Style pour le texte des diapositives */
 .carousel-caption {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	text-align: center;
+	color: white;
+	/* Couleur du texte */
 }
 
-.carousel-caption p,
+.carousel-caption p {
+	font-family: 'Roboto Slab', sans-serif;
+	/* Police de caractères */
+	font-weight: bold;
+	/* Gras */
+	font-size: 24px;
+	/* Taille de police */
+	line-height: 1.5;
+	/* Hauteur de ligne */
+	margin: 0;
+	/* Supprime les marges par défaut */
+}
+
 .carousel-caption span {
-	text-align: center;
 	display: block;
-	margin: 0 auto;
+	font-size: 18px;
+	/* Taille de police du span */
+	font-weight: normal;
+	/* Police normale */
 }
 
-/* Gestion des points du carrousel */
+/* Style pour les flèches de navigation */
+.carousel-control-prev,
+.carousel-control-next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	/* Largeur des flèches */
+	height: 50px;
+	/* Hauteur des flèches */
+}
+
+.carousel-control-prev {
+	left: 20px;
+	/* Position de la flèche précédente */
+}
+
+.carousel-control-next {
+	right: 20px;
+	/* Position de la flèche suivante */
+}
+
+.carousel-control-prev img,
+.carousel-control-next img {
+	width: auto;
+	height: 30px;
+	/* Taille de l'image des flèches */
+	display: block;
+}
+
 .carousel-indicators {
-	list-style: none;
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
 	display: flex;
 	justify-content: center;
+	list-style: none;
 	padding: 0;
-	margin: 20px 0;
+	margin: 0;
 }
 
 .carousel-indicators li {
-	background-color: #ccc;
-	border-radius: 50%;
 	width: 10px;
 	height: 10px;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.5);
+	/* Couleur des points */
 	margin: 0 5px;
 	cursor: pointer;
 }
 
 .carousel-indicators li.active {
-	background-color: #fff;
+	background-color: #ffffff;
+	/* Couleur du point actif */
 }
 
-/* Gestion des fleches du carrousel */
-
-.carousel-control-prev img,
-.carousel-control-next img {
-	width: auto;
-	height: auto;
-}
-
-.carousel-control-prev.disabled,
-.carousel-control-next.disabled {
-	width: auto;
-	height: auto;
-}
-
-.carousel-control-prev {
-	left: 10px;
-	background-color: transparent;
-}
-
-.carousel-control-next {
-	right: 10px;
-	background-color: transparent;
-}
 
 /* Fin du code CSS pour le carousel */
 

@@ -4,12 +4,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Inclure Bootstrap CSS -->
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Inclure jQuery (nécessaire pour Bootstrap JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<!-- Inclure Bootstrap JavaScript -->
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<title>Print it ! - Impressions d'entreprise</title>
 	<link rel="stylesheet" href="./assets/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,54 +22,24 @@
 		<a class="btn devis" href="mailto:contact@print-it.tld">Devis</a>
 	</header>
 	<main>
-		<div id="banner">
-			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-				</ol>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img src="assets\images\slideshow\slide1.jpg" class="d-block w-100" alt="Slide 1">
-						<div class="carousel-caption">
-							<p>Impressions tous formats <span>en boutique et en ligne</span></p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img src="assets\images\slideshow\slide2.jpg" class="d-block w-100" alt="Slide 2">
-						<div class="carousel-caption">
-							<p>Tirages haute définition grand format <span>pour vos bureaux et events</span></span></p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img src="assets\images\slideshow\slide3.jpg" class="d-block w-100" alt="Slide 3">
-						<div class="carousel-caption">
-							<p>Grand choix de couleurs <span>de CMJN aux pantones</span></p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img src="assets\images\slideshow\slide4.png" class="d-block w-100" alt="Slide 4">
-						<div class="carousel-caption">
-							<p>Autocollants <span>avec découpe laser sur mesure</span></p>
-						</div>
-					</div>
 
-				</div>
-				<div class="arrow">
-					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-						<img src="assets\images\arrow_left.png" alt="Flèche précédente">
-					</a>
-
-					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-						<img src="assets\images\arrow_right.png" alt="Flèche suivante">
-					</a>
-				</div>
-
-
+		<div id="banner" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<!-- Les diapositives seront ajoutées dynamiquement ici -->
 			</div>
+			<!-- Flèches de navigation -->
+			<a class="carousel-control-prev" href="#" role="button" aria-label="Previous">
+				<img src="assets\images\arrow_left.png" alt="Previous">
+			</a>
+			<a class="carousel-control-next" href="#" role="button" aria-label="Next">
+				<img src="assets\images\arrow_right.png" alt="Next">
+			</a>
+			<!-- Indicateurs de diapositives -->
+			<ol class="carousel-indicators">
+				<!-- Les indicateurs seront ajoutés dynamiquement ici -->
+			</ol>
 		</div>
+
 		<section id="about-us" class="container">
 			<div>
 				<h2>Qui sommes-nous ?</h2>
